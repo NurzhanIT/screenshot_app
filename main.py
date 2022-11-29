@@ -36,9 +36,9 @@ def take_screenshot():
     image_list[24]='.'
     image_list[27]='.'
     image_name= ''.join(image_list)
-    filepath = f"C:\\Users\\mrbnu\\Desktop\\Projects\\DreamLine\\screenshot_py_app\\screenshots\\{image_name}.png"
+    filepath = f"./screenshots/{image_name}.png"
     screenshot.save(filepath)
-    send_img = open(f"C:\\Users\\mrbnu\\Desktop\\Projects\\DreamLine\\screenshot_py_app\\screenshots\\{image_name}.png", 'rb')
+    send_img = open(f"./screenshots/{image_name}.png", 'rb')
     post = requests.post('http://127.0.0.1:8000/api/post-frames/', files={'frame': send_img})
     
     
